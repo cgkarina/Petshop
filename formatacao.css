@@ -1,0 +1,47 @@
+.corpo {
+	background-color: wheat;
+}
+
+.empresa {
+	font-family: Georgia, 'Times New Roman', Times, serif; 
+	color: #F76006; font-size: 11mm;
+	text-align: center;
+}
+
+.link1 {
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	color: #089AF7;
+	text-decoration: none;
+}
+
+.link2:hover{
+	color: blue;
+	text-decoration: underline;
+}
+
+.arttitulo {
+	color: chocolate;
+	font-family: 'Times New Roman', Times, serif;
+	text-align: center;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.arttexto {
+	color: coral;
+	font-family: 'Times New Roman', Times, serif;
+	text-align: justify;
+	font-style: italic;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+.textocontato {
+	color: coral;
+	font-family: 'Times New Roman', Times, serif;
+	font-style: italic;
+}
+
+.final {
+	background-color: rgb(110, 106, 106);
+}

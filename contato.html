@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hora do Banho Pet Shop & Banho e Tosa</title>
+    <link href="formatacao.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body class="corpo">
+        <div class="navbar">
+                <nav> <!-- Link para páginas do site. Podem ser colocados sub-links -->
+                    <ul>
+                        <a href="index.html" class="link2"><i class="glyphicon glyphicon-home"></i>Home</a>
+                        <a href="produtos.html" class="link2"><i class="glyphicon glyphicon-cloud"></i>Produtos e Serviços</a>
+                        <a href="contato.html" class="link2"><i class="glyphicon glyphicon-phone"></i>Contato</a>
+                    </ul>    
+                </nav>
+            </div>
+        <div class="text-center">
+        <header> <!-- Cabeçalho onde são colocados o logo e nome da empresa -->
+            <h1 class="empresa">Estética Animal Hora do Banho</h1>
+			<img src="logo.jpeg" alt="logo" width="225" height="225">
+        </header>
+        </div><br>        
+        <section>
+            <div>
+                <p class="textocontato">
+                    Está com alguma dificuldade, dúvida ou gostaria de dar uma sugestão de algo que esteja faltando? Basta entrar em contato conosco realizando o cadastro abaixo.
+                </p>
+            </div>
+        </section> <br>
+
+        <form class="form-inline">
+            <div class="form-group">
+                <label for="name">Nome: </label>
+                <input type="text" class="form-control" id="name" placeholder="Informe nome">
+            </div>
+            <div class="form-group">
+                <label for="email">Email: </label>
+                <input type="email" class="form-control" id="email" placeholder="Seu Email">
+            </div>
+            <div class="form-group">
+                <label for="fone">Telefone: </label>
+                <input type="number" class="form-control" id="fone" placeholder="Passa o  Z A P !">
+            </div>
+        </form> <br>
+        <form class="form-inline">
+            <div class="form-group">
+                <label for="CEP">CEP: </label>
+                <input type="number" class="form-control" id="campo_cep" placeholder="CEP">
+            </div>
+            <div class="form-group">
+                <label for="rua">Rua: </label>
+                <input type="text" class="form-control" id="campo_rua" placeholder="Informe a rua">
+            </div>
+            <div class="form-group">
+                <label for="cidade">Telefone: </label>
+                <input type="text" class="form-control" id="campo_cidade" placeholder="Informe a cidade">
+            </div>
+        </form> <br>
+        <form>
+            <button type="button">Selecionar CEP</button>
+        </form><br>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>            
+        <script>            
+            $(document).ready(function(){            
+                $("#campo_cep").change(function(){
+            
+                    cep = $("#campo_cep").val();
+                    url = "https://viacep.com.br/ws/"+cep+"/json";
+                    fetch(url)
+                        .then(function(response) {
+                        return response.json();
+                    })
+                    .then(function(data) {
+                        $("#campo_rua").val(data.logradouro);
+                        $("#campo_cidade").val(data.localidade);
+                    });
+                });
+            });
+        </script>
+</body>
+</html>
